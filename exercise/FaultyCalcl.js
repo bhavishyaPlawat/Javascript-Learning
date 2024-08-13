@@ -39,6 +39,8 @@ const correctCalc = (FirstNum, SecNum) => {
     return parseInt(FirstNum) / parseInt(SecNum);
   }
 };
+// can be done by
+//alert(`the result is ${eval(`${num1} ${operator} ${num2}`))`}
 
 if (Math.random() < 0.1) {
   FaultyCalc(FirstNum, SecNum);
