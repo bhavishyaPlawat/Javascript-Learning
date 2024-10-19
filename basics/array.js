@@ -12,7 +12,7 @@ for (let a = 0; a < marks.length; a++) {
 console.log();
 //array methods
 //M-1= tostring
-let num = [1, 3, 5, 63, 48, 10];
+let num = [1, 3, 5, 63, 48, 11];
 let method1 = num.toString();
 console.log(method1);
 
@@ -147,3 +147,6 @@ let a3 = arr3.reduce((h1, h2) => {
   return h1 + h2; // takes first two values of array and the result is run with third element then result with 4th
 });
 console.log(a3);
+
+
+//this comment is added by rudraksha kushwaha
