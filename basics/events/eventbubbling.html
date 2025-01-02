@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event bubbling</title>
+  </head>
+  <!-- event bubbling: when child has eventlistener then its parent automatically have so we need to stop porpogation -->
+  <style>
+    .child {
+      background-color: aliceblue;
+      border: 2px black solid;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <span class="childcontainer">
+        <div class="child">i am a child</div>
+      </span>
+    </div>
+    <script>
+      // document.querySelector(".child").addEventListener("click", () => {
+      //   alert("click was clicked");
+      // });
+      document.querySelector(".child").addEventListener("click", (e) => {
+        e.stopPropagation(); //stop to move the bubble forward
+        alert("click was clicked");
+      });
+      document
+        .querySelector(".childcontainer")
+        .addEventListener("click", (e) => {
+          e.stopPropagation();
+          alert("childcontainer was clicked");
+        });
+      document.querySelector(".container").addEventListener("click", (e) => {
+        e.stopPropagation();
+        alert("container was clicked");
+      });
+
+      //   setInterval(() => {
+      //     document.querySelector(".childcontainer").style.background = red;
+      //   }, 1000);
+      let a = setTimeout(() => {
+        document.querySelector(".childcontainer").style.background = "red";
+      }, 5000);
+    </script>
+  </body>
+</html>
